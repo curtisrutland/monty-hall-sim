@@ -23,3 +23,19 @@ This is a confusing result, as we tend to think of these choices as individual s
 ### [Try it Yourself!](https://curtisrutland.github.io/monty-hall-sim/)
 
 This simulator allows you to test this yourself. Play as many games as you want, switching and staying. The scoreboard will reflect your wins and losses. You can also simulate 100 switches or stays at a time.
+
+## Debug Mode
+
+In case you're a skeptic about this behavior, you can enable "Debug Mode". This will show you which door contains the prize *before* you make your selections. This should prove that this app is not changing the prize-containing door after you make your choices.
+
+To enable debug mode, open the Developer Tools, navigate to the Console, and enter:
+
+```javascript
+setDebugMode(true)
+```
+
+To disable debug mode, enter the following:
+
+```javascript
+setDebugMode(false)
+```
