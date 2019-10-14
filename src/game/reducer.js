@@ -68,6 +68,7 @@ function resetGame(state) {
 function setFirstChoice(state, firstChoiceIndex) {
   if (state.step !== 0) {
     console.error(`setFirstChoice called on invalid step (${state.step})`)
+    return state
   }
   const removeOptions = []
   for (let i = 0; i < 3; i++) {
@@ -85,6 +86,7 @@ function setFirstChoice(state, firstChoiceIndex) {
 function setSecondChoice(state, secondChoiceIndex) {
   if (state.step !== 1) {
     console.error(`setSecondChoice called on invalid step (${state.step})`)
+    return state
   }
   let { switched, stayed, switchedWins, stayedWins, firstChoiceIndex, prizeIndex } = state
   const won = secondChoiceIndex === prizeIndex
