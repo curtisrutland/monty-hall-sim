@@ -113,7 +113,7 @@ function simulate(state, { type, count }) {
     state = resetGame(state)
     state = setFirstChoice(state, rand())
     const { firstChoiceIndex, removedIndex } = state
-    if (type === 'switch') state = setSecondChoice(state, firstChoiceIndex)
+    if (type === 'stay') state = setSecondChoice(state, firstChoiceIndex)
     else {
       const nextChoice = [0, 1, 2].find(x => x !== firstChoiceIndex && x !== removedIndex)
       state = setSecondChoice(state, nextChoice)
