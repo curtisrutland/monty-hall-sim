@@ -1,68 +1,23 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# monty-hall-sim
 
-## Available Scripts
+The [Monty Hall Problem](https://en.wikipedia.org/wiki/Monty_Hall_problem) is a non-intuitive example of probabilities at work. The "problem" is based on a game show (Let's Make a Deal) minigame:
 
-In the project directory, you can run:
+* The host offers the contestant a choice between **3 doors**, only one of which contains a prize (usually a new car).
+* Once the contestant chooses, the host **removes** one of the remaining doors, one that **does not** contain the prize.
+* The contestant is offered a choice: **stay** with their first choice, or **switch** to the other remaining door.
+* The prize is revealed and the contestant discoveres if they've won.
 
-### `yarn start`
+The question that the Monty Hall Problem poses is **"Is it better to switch or stay?"**
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Mathematically, the better answer is to **switch**. This is non-intuitive, as you would presume that between the two doors, there's a 50% chance you chose the correct door. That, however, only consideres the last choice. When you factor both choices and the removal of an incorrect choice, the outcome favors switching at a 66% chance for winning.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+* Initially, when you are choosing between three options, you have a 33.3% chance of choosing the correct door. This means that you will choose wrong two out of three times.
+* Keeping that in mind, now an invalid choice is removed. Since you *most likely* chose an incorrect option initially, and the *other* incorrect option was removed, logically the correct answer must be the remaining door that you haven't chosen yet.
 
-### `yarn test`
+Simulations bear this out. Running a simulation of switching over a large sample set yields on average a 66% win rate, whereas staying yields a 33% win rate. 
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This is a confusing result, as we tend to think of these choices as individual statistical events. Choosing between three doors is a 1 in 3 chance, and choosing between two is 1 in 2, right? Well, in this case we must consider these as a system of events with some non-random action providing us more information as the system evolves. The second choice is not the same as choosing between two random doors; statistically we can presume that we've chosen the wrong door, and by eliminating the *other* wrong result, we're left with the correct result.
 
-### `yarn build`
+## This Simulator
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+This simulator allows you to test this yourself. Play as many games as you want, switching and staying. The scoreboard will reflect your wins and losses. You can also simulate 100 switches or stays at a time.
