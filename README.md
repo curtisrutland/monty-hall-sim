@@ -5,7 +5,7 @@ The [Monty Hall Problem](https://en.wikipedia.org/wiki/Monty_Hall_problem) is a 
 * The host offers the contestant a choice between **3 doors**, only one of which contains a prize (usually a new car).
 * Once the contestant chooses, the host **removes** one of the remaining doors, one that **does not** contain the prize.
 * The contestant is offered a choice: **stay** with their first choice, or **switch** to the other remaining door.
-* The prize is revealed and the contestant discoveres if they've won.
+* The prize is revealed and the contestant discovers if they've won.
 
 The question that the Monty Hall Problem poses is **"Is it better to switch or stay?"**
 
